@@ -22,3 +22,7 @@ console.jsonl
 
 # the original Next.js checkout kept in the workspace for reference
 ai-wallet-assistant-arc/
+
+# Vercel local build output
+.vercel/
+node_modules
