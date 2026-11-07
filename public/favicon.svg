@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Squid">
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#b7ff5e" stroke="#111" stroke-width="4"/>
+  <path d="M32 9 L18 23 L26 24 Z" fill="#111" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M32 9 L46 23 L38 24 Z" fill="#111" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M32 9 C22 17 21 30 25 38 L39 38 C43 30 42 17 32 9 Z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="28" cy="30" r="2.8" fill="#111"/>
+  <circle cx="36" cy="30" r="2.8" fill="#111"/>
+  <path d="M26 38 C25 44 22 47 23 53 M30 38 C30 45 28 48 29 55 M34 38 C34 45 36 48 35 55 M38 38 C39 44 42 47 41 53" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+</svg>
