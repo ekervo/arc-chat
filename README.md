@@ -313,7 +313,7 @@ Create a `.env` file in the project root to set it. Restart the chat service (`b
 
 ## Deploying to Vercel
 
-The web app and the chat service deploy together on Vercel: the app is built as a static site and the chat service runs as a serverless function at `/api/chat`.
+The web app and the chat service deploy together on Vercel: the app is built as a static site and the chat service runs as a serverless function at `/api/chat` (the `api/` folder at the project root).
 
 1. Import the repository into Vercel. The Vite preset is detected automatically.
 2. In **Project Settings → Environment Variables**, add `DEEPSEEK_API_KEY` (optional, see above) for the Production environment.
