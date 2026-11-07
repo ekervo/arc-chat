@@ -273,7 +273,7 @@ flowchart TB
         UI["React app<br/>chat, review cards"]
         W["Your wallet<br/>MetaMask or similar"]
     end
-    subgraph Server["Chat service (Bun)"]
+    subgraph Server["Chat service (Bun locally, Vercel function when deployed)"]
         API["/api/chat<br/>validates every action"]
     end
     LLM["Language model (DeepSeek)<br/>optional"]
@@ -301,7 +301,7 @@ bun run server   # chat API on port 3001
 bun run dev      # web app on port 5173 (proxies /api to the chat API)
 ```
 
-Other scripts: `bun run check` runs lint and typecheck.
+Other scripts: `bun run build` builds the web app, and `bun run check` runs lint and typecheck.
 
 ### Environment variables
 
@@ -310,6 +310,16 @@ Other scripts: `bun run check` runs lint and typecheck.
 | `DEEPSEEK_API_KEY` | Optional. Lets the assistant understand free-form messages in any language. Without it, a built-in parser handles common English commands. The key stays on the server, so never prefix it with `VITE_`. |
 
 Create a `.env` file in the project root to set it. Restart the chat service (`bun run server`) after changing `.env`, because it reads the file only at startup. Never commit `.env`.
+
+## Deploying to Vercel
+
+The web app and the chat service deploy together on Vercel: the app is built as a static site and the chat service runs as a serverless function at `/api/chat`.
+
+1. Import the repository into Vercel. The Vite preset is detected automatically.
+2. In **Project Settings → Environment Variables**, add `DEEPSEEK_API_KEY` (optional, see above) for the Production environment.
+3. Deploy. If you add or change the key later, redeploy so the function picks it up.
+
+Without the function, the chat shows "Something went wrong", because the web app alone has nothing to answer `/api/chat`. Never commit `.env` and never prefix the key with `VITE_`.
 
 ## FAQ
 
