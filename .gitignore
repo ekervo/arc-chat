@@ -1,0 +1,24 @@
+# secrets and local env
+.env
+.env.*
+!.env.example
+.circle/
+recovery_file*
+
+# dependencies and build output
+node_modules/
+dist/
+contracts/out/
+contracts/cache/
+cache/
+out/
+
+# local logs and tooling
+*.log
+traces.jsonl
+console.jsonl
+.agents/
+.DS_Store
+
+# the original Next.js checkout kept in the workspace for reference
+ai-wallet-assistant-arc/
